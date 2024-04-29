@@ -33,3 +33,6 @@ enum class Color {
 </pre>
 
 3. map.insert will not overwrite the key, but map[key] will overwrite if its already present
+
+## Class Creation Observations
+1. Without 'override' keyword, the parent class's virtual function will run. Though, missing override would not give any warning. This is some backwards compatibility thing.
