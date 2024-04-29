@@ -22,7 +22,7 @@ private:
 
 public:
     /* Return type of this function is a reference. Because of this
-       comound operations like ComputerBuilder.addRAM<().addStorage()
+       compound operations like ComputerBuilder.addRAM().addStorage()
        can be done. This is called a fluent builder.
     */
     ComputerBuilder& addRAM(int ram_size){
