@@ -34,5 +34,9 @@ enum class Color {
 
 3. map.insert will not overwrite the key, but map[key] will overwrite if its already present
 
-## Class Creation Observations
+### Class Creation Observations
 1. Without 'override' keyword, the parent class's virtual function will run. Though, missing override would not give any warning. This is some backwards compatibility thing.
+
+
+## Misc
+1. this vs *this. this is a pointer, *this is a deferenced object. While returning from a function, return a referecne when you don't want to return a clone because returning *this will create a clone on the stack.

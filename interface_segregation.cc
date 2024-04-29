@@ -28,12 +28,12 @@ class TwoWheeler{
 public:
     TwoWheeler(){};
 
-    // ...
+    // relevant pure virtual functions 
 };
 
 class FourWheeler{
 public:
     FourWheeler(){};
 
-    // ...
+    // relevant pure virtual functions
 };
