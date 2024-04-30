@@ -40,3 +40,7 @@ enum class Color {
 
 ## Misc
 1. this vs *this. this is a pointer, *this is a deferenced object. While returning from a function, return a referecne when you don't want to return a clone because returning *this will create a clone on the stack.
+
+2. Singleton(const Singleton&) = delete; 
+   This deletes the copy constructor, see how no variable name is required.
+   Singleton(const Singleton& instance) = delete;
