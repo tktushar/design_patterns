@@ -4,7 +4,7 @@ using namespace std;
 
 class Computer{
     /* Computer can't be directly created by anyone. Its kept
-       hidden by makind the constructor private. But, the builder
+       hidden by making the constructor private. But, the builder
        must have access to it. Hence builder class is our frined.
     */
     friend class ComputerBuilder;
@@ -27,7 +27,7 @@ public:
     */
     ComputerBuilder& addRAM(int ram_size){
         computer.ram = ram_size;
-        return *this;
+        return *this; //
     }
 
     ComputerBuilder& addStorage(int storage_size){

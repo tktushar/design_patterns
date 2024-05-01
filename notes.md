@@ -36,7 +36,7 @@ enum class Color {
 
 ### Class Creation Observations
 1. Without 'override' keyword, the parent class's virtual function will run. Though, missing override would not give any warning. This is some backwards compatibility thing.
-
+2. If class C inherits class B and class B inherits class A, and B overrides a pure virtual function in A, C can override this same function even when defined in B.
 
 ## Misc
 1. this vs *this. this is a pointer, *this is a deferenced object. While returning from a function, return a referecne when you don't want to return a clone because returning *this will create a clone on the stack.
