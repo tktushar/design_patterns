@@ -27,7 +27,7 @@ struct GroupOfCircles : Shape{
     vector<Shape*> objs;
 
     void draw() override {
-        for(auto& obj : objs){
+        for(auto&& obj : objs){
             obj->draw();
         }
     }
@@ -36,8 +36,8 @@ struct GroupOfCircles : Shape{
 int main(){
     Circle c, c1, c2;
     GroupOfCircles g;
-    g.objs.push_back(c1);
-    g.objs.push_back(c2);
+    g.objs.push_back(&c1);
+    g.objs.push_back(&c2);
 
     g.draw();
 }
