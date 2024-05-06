@@ -1,4 +1,4 @@
-# design_patterns
+# Design_patterns
 
-# Adapter
-Adapt an existing interface to a differnt application
+I keep notes on my understanding of design patterns here. 
+I revisit and change when I find some new ideas!
