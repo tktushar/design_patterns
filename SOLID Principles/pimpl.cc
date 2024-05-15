@@ -49,7 +49,7 @@ void Person::PersonImpl::greet(Person *p){
 }
 
 
-Person::Person()  : impl(new Person::PersonImpl){}
+Person::Person()  : impl{new Person::PersonImpl}{}
 Person::~Person() {
     delete impl;
 }

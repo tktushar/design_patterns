@@ -1,7 +1,11 @@
 // Liskov Substitution Principle
 
+/*
+        == Liskov says ==
+        Derived class should be sustitute-able at any place
+        where a base class is used.
 
-
+*/
 
 /* In this case using a factory method would help.
    A factory for square and rectangle 
@@ -48,6 +52,8 @@ public:
         this->height = height;
     }
 
+    // same with setWidth, i.e, set both width and height
+
 };
 
 // calling process on square would set the width
@@ -55,7 +61,11 @@ void process(Rectangle& r){
     int w = r.getWidth();
     r.setHeight(10); // this will set both the width and height for square
 
-    std::cout << "area with " << r.area() << std::endl; // this area is wrong for square
+    std::cout << "expected area is " << w*10 <<std::endl;
+    std::cout << "area with " << r.area() << std::endl; 
+    // expected and clculated area will differ when using a Square class
+    // because both width and height got changed. This is a violation
+    // of Liskov's principle.
 };
 
 int main(){

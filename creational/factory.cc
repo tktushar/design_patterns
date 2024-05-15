@@ -28,6 +28,7 @@ public:
     float x, y;
     
     // static function resides with the class and not with instances
+    // notice that it returs a pointer to the Point object
     static Point NewCartesian(float x, float y){
         return {x,y};
     }

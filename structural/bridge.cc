@@ -45,7 +45,7 @@ struct RendererB : Renderer{
 };
 
 int main(){
-    RendererB ren;
+    RendererA ren;
     Circle c{ren, 1, 1, 2};
     c.draw();
 
