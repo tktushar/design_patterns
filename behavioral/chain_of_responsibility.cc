@@ -18,8 +18,12 @@ using namespace std;
     Types :
     ------
     a. Pointer Chain : how it used to be implemented
+
+
     b. Broker Chain  : Chain of Responsibility + Observer design pattern
                        + Command/Query design pattern
+
+
     
 
 */
@@ -73,6 +77,7 @@ public:
     }
 };
 
+// Concrete implementation
 class RajyaSabhaModifier : public BillModifier{
 public:
     RajyaSabhaModifier(Bill &bill) : BillModifier{bill} {};
