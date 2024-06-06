@@ -15,6 +15,7 @@ using namespace std;
 
 */
 
+/* This acts as a proxy for the Creature class */
 template <typename T> 
 struct Property{
     T value;
@@ -23,7 +24,7 @@ struct Property{
 
     }
 
-    operator Y(){
+    operator T(){
         return value;
     }
 

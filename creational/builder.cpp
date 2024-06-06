@@ -2,6 +2,12 @@
 #include <string>
 using namespace std;
 
+/*
+    == Builder ==
+    
+
+
+*/
 class Computer{
     /* Computer can't be directly created by anyone. Its kept
        hidden by making the constructor private. But, the builder

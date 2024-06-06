@@ -19,7 +19,7 @@ using namespace std;
     Types :
     ------
     Aggregation : Keep a pointer/reference to the object in a new class
-                     and do stuff with it. This is dynamic approach.
+                  and do stuff with it. This is dynamic approach.
 
 */
 

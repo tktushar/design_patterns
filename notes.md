@@ -44,3 +44,9 @@ enum class Color {
 2. Singleton(const Singleton&) = delete; 
    This deletes the copy constructor, see how no variable name is required.
    Singleton(const Singleton& instance) = delete;
+
+## Design Patterns 
+Gamma Categorization :
+1. Creational : deals with creations of objects : explicit/implicit. Can be wholesale or piecewise
+2. Structural Patterns : Concerned with structure (eg. class memebers). Usually wrappers. Stress on good API design
+3. Behavioural Patterns : all different, no central theme
