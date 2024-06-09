@@ -24,8 +24,6 @@ using namespace std;
                        + Command/Query design pattern
 
 
-    
-
 */
 
 // a bill that the government is discussing on
@@ -41,7 +39,6 @@ public:
 
 
 //   == Abstract Class ==
-
 // a bill modifier handler. we inherit this to make concrete bill modifiers
 class BillModifier{
 public:

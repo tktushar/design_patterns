@@ -6,21 +6,11 @@
 using namespace std;
 
 /*
-        === Strategy Pattern ===
-        Choose the algorithm to execute at runtime.
-        Looks similar to template but the differece is:
-         a. Template class chooses the concrete implementation
-            at runtime. Since the skeleton class keeps some
-            functions virtual. Rest of the code is shared
-            between two implementations
-         b. Implementations in strategy pattern are chosen 
-            at the runtime. The implementations are 'contained'
-            in separate classes.
+        === Static Strategy Pattern ===
+        Choose the strategy statically. Refer to 
+        dynamic_strategy.cc first
 
-        Two ways to implement :
-         a. Dynamic strategy
-         b. Static strategy
-
+        Can't switch from one to another at runtime.0
 */
 
 
@@ -84,53 +74,38 @@ public:
    }
 };
 
+template <typename LS>
 class TextProcessor{
 public:
-   void set_output_format(const OutputFormat& format){
-
-      switch(format){
-         case OutputFormat::markdown:
-            list_strategy = make_unique<MarkdownListStrategy>();
-            break;
-
-         case OutputFormat::html:
-            list_strategy = make_unique<htmlListStrategy>();
-            break;
-      }
-   }
-
    void append_list(const vector<string>& items){
-      list_strategy->start(oss);
+      list_strategy.start(oss);
       for(auto& item : items){
-         list_strategy->add_list_item(oss, item);
+         list_strategy.add_list_item(oss, item);
       }
-      list_strategy->end(oss);
+      list_strategy.end(oss);
    }
 
    void clear(){
       oss.str("");
    }
+
    string str() const {return oss.str();}
 
 private : 
    ostringstream oss;
-   // unique_ptr because we want the list_strategy to be owned by text processor
-   // and when we change strategy, the old strategy should no longer exist
-   unique_ptr<ListStrategy> list_strategy;
+   LS list_strategy; // static instance of the strategy
 };
 
 int main(){
    vector<string> items{"monkey", "hen", "lion"};
 
-   TextProcessor tp; // this is the context of the strategy 
+   TextProcessor<MarkdownListStrategy> tpm; // this is the context of the strategy 
+   tpm.append_list(items);
+   cout << tpm.str() << endl;
 
-   tp.set_output_format(OutputFormat::markdown);
-   tp.append_list(items);
+   tpm.clear();
 
-   cout << tp.str() << endl;
-
-   tp.clear();
-   tp.set_output_format(OutputFormat::html);
+   TextProcessor<htmlListStrategy> tp;
    tp.append_list(items);
    cout << tp.str() << endl;
 

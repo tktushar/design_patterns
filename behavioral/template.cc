@@ -4,7 +4,10 @@ using namespace std;
 /*
     == Template Pattern ==
 
-    Motivation : Some parts of an algorithm implementation
+    Motivation
+    ----------
+    
+    Some parts of an algorithm implementation
     are different and we can let the derived classes implement 
     them.
 
