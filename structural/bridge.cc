@@ -23,6 +23,7 @@ struct Shape{
     Renderer &ren;
 };
 
+// concrete classes
 struct Circle : Shape{
     Circle(Renderer& ren, float x, float y, float r) : Shape(ren), x{x}, y{y}, r{r} {};
     float x, y, r;
@@ -48,5 +49,4 @@ int main(){
     RendererA ren;
     Circle c{ren, 1, 1, 2};
     c.draw();
-
 }

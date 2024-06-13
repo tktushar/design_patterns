@@ -28,19 +28,6 @@ public:
     virtual string str() const = 0;
 };
 
-class Circle : Shape{
-public:
-    float radius;
-    Circle () {};
-    Circle (float radius) : radius(radius) {};
-
-    string str() const override {
-        ostringstream oss;
-        oss << "A circle of radius " << radius << endl;
-        return oss.str();
-    }
-};
-
 class Square : public Shape{
 public:
     float side;

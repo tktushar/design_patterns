@@ -4,10 +4,9 @@ using namespace std;
 
 /*
     == Builder ==
-    
-
-
+   Piece-wise creation of an object 
 */
+
 class Computer{
     /* Computer can't be directly created by anyone. Its kept
        hidden by making the constructor private. But, the builder
@@ -15,11 +14,10 @@ class Computer{
     */
     friend class ComputerBuilder;
 
-private :
+public :
     int ram;
     int storage;
     string storage_bus_type;
-
 };
 
 
@@ -42,9 +40,13 @@ public:
         /* some more random complex opreations */
         switch(storage_size){
             case 512:
-                computer.storage_bus_type = 'xy';
+                computer.storage_bus_type = "xy";
         }
         return *this;
+    }
+
+    Computer& get_computer(){
+        return computer;
     }
 
 };
@@ -54,6 +56,8 @@ int main (){
     ComputerBuilder builder;
     builder.addRAM(128).addStorage(512);
 
-    cout << "Hello\n";
+    auto pc = builder.get_computer();
+    
+    cout << "Created a computer with RAM " << pc.ram << endl;
     return 1;
 }

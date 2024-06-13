@@ -30,6 +30,7 @@ class ProductFilter{
     // originally intended to filter out products by color
     vector<Product*> FilterByColor(vector<Product*> products) {
         vector<Product*> ret;
+        // filter logic
         return ret;
     }
 };
@@ -71,20 +72,22 @@ public:
     Abstract Interface for guys who want
     to design a filter now.
 */
-template <typename T> class Specification{
+template <typename T> 
+class Specification{
 public:
     virtual bool is_satisfied(T* item) = 0;
 };
 
-template <typename T> class Filter{
+template <typename T> 
+class Filter{
 public:
     virtual vector<T*> filter(vector<T*> iterms, Specification<T>&) = 0;
 };
 
+
 /*
     Concrete implementation
 */
-
 class ColorSpecification : public Specification<Product>{
 public:
     ColorSpecification(Color color) : color{color}{};
@@ -112,8 +115,6 @@ public:
     
     }
 };
-
-
 
 int main (){
     Product fruit{"orange", Color::green, Size::small};

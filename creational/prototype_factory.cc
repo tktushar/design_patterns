@@ -31,27 +31,28 @@ struct Contact{
 
     // copy constructor
     Contact(const Contact& contact) : name{contact.name} , address{new Address{contact.address->street}} {}
-    // could also give Address a copy constructot too
+    // could also give Address a copy constructor too
 
 };
 
 // ========= Prototype Factory ===== //
 struct EmployeeFactory{
     static unique_ptr<Contact> new_employee(const string& name){
-
         static Contact p{"", new Address{"Bannergatta Road"}};
         return create_employee(name, p);
-
     }
 
 private:
-    unique_ptr<Contact> create_employee(const string& name, const Contact& prototype){
-        auto result = make_unique<Contact>prototype;
+    static unique_ptr<Contact> create_employee(const string& name, const Contact& prototype){
+        auto result = make_unique<Contact>(prototype);
         result->name = name;
         return result;
     }
 };
 
 int main(){
+    auto employee = EmployeeFactory::new_employee("John Doe");
+    cout << "Employee Name: " << employee->name << endl;
+    cout << "Employee Address: " << employee->address->street << endl;
     return 0;
 }

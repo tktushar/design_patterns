@@ -18,9 +18,7 @@ template <typename T>
 struct Property{
     T value;
 
-    Property(T value) {
-
-    }
+    Property(T value) {}
 
     operator T(){
         return value;
